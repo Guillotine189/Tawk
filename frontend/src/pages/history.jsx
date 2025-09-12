@@ -24,11 +24,11 @@ export default function History() {
         const fetchHistory = async () => {
             try {
                 const history = await getHistoryOfUser();
-                console.log(history);
-                console.log(history);
-                console.log(history);
-                console.log(history);
-                setMeetings(history);
+                if(!history.length){
+                    setMeetings([]);
+                }else{
+                    setMeetings(history);
+                }
             } catch {
 
             }

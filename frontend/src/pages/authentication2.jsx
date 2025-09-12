@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import "../App.css"
+import httpStatus from "http-status"
 
 
 export default function Authentication2(){
@@ -39,8 +40,10 @@ export default function Authentication2(){
         config
       );
 
-      console.log(response);
-      alert("works");
+      if(response.status === httpStatus.CREATED){
+        localStorage.setItem('token', response.data.token);
+        navigate("/home");
+      }
 
     }
     catch(error){
