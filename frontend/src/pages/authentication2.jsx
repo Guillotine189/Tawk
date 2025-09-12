@@ -41,8 +41,7 @@ export default function Authentication2(){
       );
 
       if(response.status === httpStatus.CREATED){
-        localStorage.setItem('token', response.data.token);
-        navigate("/home");
+        navigate("/login");
       }
 
     }
