@@ -3,7 +3,9 @@ import axios from "axios";
 import "../App.css"
 import { useNavigate } from "react-router-dom"
 import httpStatus from "http-status"
+import server from '../environment';
 
+const server_url = server;
 
 export default function Authentication(){
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ export default function Authentication(){
     }
 
     try{
-      const response = await axios.post('http://localhost:8000/api/v1/users/login',
+      const response = await axios.post((`${server_url}/api/v1/users/login`),
         postData,
         config
       );

@@ -3,7 +3,9 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import "../App.css"
 import httpStatus from "http-status"
+import server from '../environment';
 
+const server_url = server;
 
 export default function Authentication2(){
 
@@ -35,7 +37,7 @@ export default function Authentication2(){
     }
 
     try{
-      const response = await axios.post('http://localhost:8000/api/v1/users/register',
+      const response = await axios.post((`${server_url}/api/v1/users/register`),
         postData,
         config
       );

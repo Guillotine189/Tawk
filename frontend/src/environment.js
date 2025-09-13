@@ -1,6 +1,6 @@
-let IS_PROD = false;
+let IS_PROD = true;
 const server = IS_PROD ?
-    "https://apnacollegebackend.onrender.com" :
+    "https://tawk-backend-lpj1.onrender.com" :
 
     "http://localhost:8000"
 
