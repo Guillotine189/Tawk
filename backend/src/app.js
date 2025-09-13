@@ -6,6 +6,8 @@ import cors from "cors";
 import { connectToSocket } from "./controllers/socketManager.js";
 import userRoutes from "./routes/users.routes.js";
 
+
+const MONGO_URL = process.env.MONGO_DB_URL;
 const app = express();
 const server = createServer(app);  // main server
 const io = connectToSocket(server); // app and socket connected to main server
@@ -22,7 +24,7 @@ app.set("port", (process.env.PORT || 8000));
 
 const start = async() => {
 
-	const connectionDb = await mongoose.connect("mongodb+srv://bharadwajpinak:klgVHdGiuHAsrKkr@tawk.akz6a7i.mongodb.net/");
+	const connectionDb = await mongoose.connect(MONGO_DB_URL);
 	console.log(`MONGO CONNECTED TO USER ${connectionDb.connection.host}`);
 
 
