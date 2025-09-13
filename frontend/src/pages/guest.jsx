@@ -24,7 +24,7 @@ function GuestComponent() {
 
                 <div style={{ display: "flex", alignItems: "center" }}>
 
-                    <h2>Apna Video Call</h2>
+                    <h2>TAWK</h2>
                 </div>
 
 
@@ -34,7 +34,7 @@ function GuestComponent() {
             <div className="meetContainer">
                 <div className="leftPanel">
                     <div>
-                        <h2>Providing Quality Video Call Just Like Quality Education</h2>
+                        <h2>Providing Quality Video Call</h2>
 
                         <div style={{ display: 'flex', gap: "10px" }}>
 
